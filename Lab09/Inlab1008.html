@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Inlab1008</title>
+		<script>
+			var img = [
+				"http://zeldawiki.org/images/thumb/8/80/Triforce_Logo.png/240px-Triforce_Logo.png",
+				"http://upload.wikimedia.org/wikipedia/en/b/b2/Galactic_Empire_emblem.svg",
+				"http://media.tumblr.com/tumblr_mb7wxyfcVv1rv94h7.png",
+				"http://psacake.com/web/dots/00FFFF.gif",
+				];	
+			function loadPics() {
+				x = document.getElementsByTagName('img');
+				for (i = 0; i < x.length; i++) {
+					x[i].style.width = '150px';
+					x[i].style.height = '150px';
+					if (i == 0 || i == 1) {
+						x[i].onmouseover = function() {f1(this)};
+					}
+					else if (i == 2 || i == 3) {
+						x[i].onmouseover = function() {f2(this)};
+					}
+					else {
+						x[i].onmouseover = function() {f3(this)};
+					}
+				}
+				document.getElementById('s1p1').src = img[0]; //x[0]
+				document.getElementById('s1p2').src = img[0]; //x[1]
+				document.getElementById('s1p2').style.visibility = 'hidden'; //x[1]
+		
+				document.getElementById('s2p1').src = img[1]; //x[2]
+				document.getElementById('s2p2').src = img[3]; //x[3]
+		
+				document.getElementById('s3p1').src = img[2]; //x[4]
+				document.getElementById('s3p1').style.left = '0px'; //x[4]
+			}
+			function f1(element) {
+				element.style.visibility = 'hidden';
+				if (element.id == 's1p1') {
+					document.getElementById('s1p2').style.visibility = 'visible';
+				}
+				else {
+					document.getElementById('s1p1').style.visibility = 'visible';
+				}
+			}
+			function f2(element) {
+				if (element.id == 's2p1') {			
+					document.getElementById('s2p1').src = img[3];
+					document.getElementById('s2p2').src = img[1];
+				}
+				else {
+					document.getElementById('s2p1').src = img[1];
+					document.getElementById('s2p2').src = img[3];
+				}
+			}
+			function f3(element) {
+				if (element.style.left == '0px') {
+					element.style.left = '250px';
+				}
+				else {
+					element.style.left = '0px';
+				}
+			}  
+		</script>
+		
+		<style>
+			#container {
+			background: #00FFFF;
+			width: 500px;
+			height: 600px;
+			margin: auto;
+			}
+			#pSet1, #pSet2, #pSet3 {
+			clear: both;
+			width: 400px;
+			margin: auto;
+			}
+			#s1p1, #s2p1 {
+			float: left;
+			}
+			#s1p2, #s2p2 {
+			float: right;
+			}
+			#s3p1 {
+			position: relative;
+			}
+		</style>
+	</head>
+	<body onload="loadPics()">
+		<div id="container">
+			<div id="pSet1">
+				<img id="s1p1">
+				<img id="s1p2">		
+			</div>
+			<div id="pSet2">
+				<img id="s2p1">
+				<img id="s2p2">
+		
+			</div>
+			<div id="pSet3">
+				<img id="s3p1">		
+			</div>
+		</div>
+	</body>
+</html>

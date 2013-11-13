@@ -1,0 +1,104 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<title>Inlab1003</title>
+		<script>
+			var author = [
+				'-Mike Nitchie',
+				'-Yoda',
+				'-Sherlock Holmes',
+				'-Spock',
+				'-Luna Lovegood',
+				'-Hoban Washburne',
+				];
+			var quote = [
+				'Every time you forward an email from Geoff Larcom,<br />God kills a kitten.',
+				'Do. Or do not. There is no try.',
+				'When you have eliminated the impossible, whatever remains,<br />however improbable, must be the truth.',
+				'The needs of the many outweigh the needs of the few.',
+				'Things we lose have a way of coming back to us in the end,<br />if not always in the way we expect.',
+				'Curse your sudden but ineveitable betrayal!',
+				];
+			var x = 0;
+			function setQuote(object, orAuthor) {
+				if (orAuthor) {
+					object.innerHTML=author[x];
+				}
+				else if (!orAuthor) {
+					object.innerHTML=quote[x];
+				}
+			}
+			function loadButtons() {
+				var x = document.getElementsByTagName('button');
+				for (i = 0; i < x.length; i++) {
+					x[i].onclick = function() {theFunction(this.value)};
+					x[i].value=i;
+				}				
+			}
+			function newQuote() {
+				x = Math.floor(Math.random() * 6);
+				document.getElementById('quote').innerHTML=quote[x];				
+			}
+			function theFunction(value) {
+				if (value == 0 || value == 1) {
+					var x = document.getElementById('container');
+					if (value == 0) {
+						x.style.background='green';
+					}
+					else {
+						x.style.background='white';
+					}
+				}
+				else if (value == 4) {
+					newQuote();
+				}
+				else {
+					var x = document.getElementById('quote');
+					if (value == 2) {
+						x.style.color='red';
+					}
+					else {
+						x.style.color='black';
+					}
+				}
+			}
+		</script>		
+		<style>
+			#container {
+			background: green;
+			}
+			#quote {
+			color: red;
+			clear: both;
+			width: 400px;
+			margin: auto;
+			text-align: center;
+			font: bold 15px serif;
+			}
+			#buttons {
+			width: 200px;
+			margin: auto;
+			}
+			#newButton {
+			width: 150px;
+			margin: auto;
+			clear: both;
+			}
+			button {
+			float: left;
+			}
+		</style>
+	</head>
+	<body id="container" onload="loadButtons()">
+			<div id="buttons">
+				<button>BG to Green</button>
+				<button>BG to White</button>
+				<button>Text to Red</button>
+				<button>Darken Text</button>
+			</div>
+			<div id="newButton">
+				<button>Set New Quote</button>
+			</div>
+			<div id="quote" onmouseover="setQuote(this, true)" onmouseout="setQuote(this, false)">&nbsp;</div>
+	</body>
+</html>

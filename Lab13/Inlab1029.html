@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Inlab1029</title>
+		<script>
+			function checkIE() {
+				if (navigator.appName == "Microsoft Internet Explorer")	{
+					document.write('Stop using Internet Explorer.');
+				}
+			}
+			
+			var picArray = [
+				"http://images2.wikia.nocookie.net/__cb20090420235859/starwars/images/0/0f/ChissFemale.jpg", //chiss
+				"http://www.gamer.ru/system/attached_images/images/000/636/629/original/mass-effect-2-legion.jpg?1378625064", //geth
+				"http://2.bp.blogspot.com/--hb58KhHOLw/UP9E23iLsUI/AAAAAAAAEzQ/c_MZ6pWPUVM/s1600/omicron-persei-8.png", //omicron
+				"http://images4.wikia.nocookie.net/__cb20120326180457/masseffect/images/b/bb/WA_GethPrime.png", //geth
+				"http://filmladd.com/images/Ndnd.jpg", //omicron
+				"http://images1.wikia.nocookie.net/__cb20120425162940/starwars/images/1/19/UnusuallyJovialChiss-TOR.png", //chiss
+				"http://images3.wikia.nocookie.net/__cb20120318020857/memoryalpha/en/images/0/0f/James_Kirk,_2266.jpg",
+				//"http://images2.fanpop.com/image/photos/11800000/ST-Behind-the-Scenes-william-shatner-11886186-2022-2560.jpg", //human
+				"http://nyobetabeat.files.wordpress.com/2013/02/benedict-cumberbatch-sherlock-star-trek.jpeg", //human
+				"http://2.bp.blogspot.com/-G5v5ZTqSOpI/UZjoqOUQaiI/AAAAAAAAEko/d2_ICgq6z9k/s640/Natalie-Portman-looking-beautiful-857.jpg", //human
+				"http://wallpapersus.com/wp-content/uploads/2012/11/Natasha-Romanoff-Iron-Man.jpg", //human
+				];
+				
+			var theTimeOut;
+			var picCounter = 0;
+			
+			function stopChange() {
+				clearTimeout(theTimeOut);
+			}
+			function changePic(theBool) {
+				if (theBool) {
+					loadPic(theBool, picCounter++ % picArray.length);
+				} else {
+					loadPic(theBool, Math.floor(Math.random() * picArray.length));
+				}
+			}
+			function loadPic(theBool, picNum) {
+				document.thePic.src = picArray[picNum];
+				theTimeOut = setTimeout('changePic(' + theBool + ')', 500);
+			}
+		</script>
+	</head>
+	<body onload="checkIE();">
+		<div id="container" style="position:relative; width:500; margin:auto;">
+			<img id="thePic" src="null" alt="This is a picture" height="250px" width="200px">
+			<div id="theButtons">
+				<button id="start_btn" onclick="changePic(true)">Start Slideshow</button>
+				<button id="start_rnd_btn" onclick="changePic(false)">Start Random Slideshow</button>
+				<button id="stop_btn" onclick="stopChange()">Stop Slidshow</button>
+			</div>
+		</div>
+	</body>
+</html>

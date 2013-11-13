@@ -1,0 +1,51 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<title>Inlab1003</title>
+		<script>
+			function f1 () {
+			document.getElementById('container').style.background='green';
+			}
+			function f2 () {
+			document.getElementById('container').style.background='white';
+			}
+			function f3 () {
+			document.getElementById('quote').style.color='red';
+			}
+			function f4 () {
+			document.getElementById('quote').style.color='black';
+			}
+		</script>
+		
+		<style>
+			#container {
+			background: green;
+			}
+			#quote {
+			color: red;
+			clear: both;
+			width: 400px;
+			margin: auto;
+			text-align: center;
+			}
+			#buttons {
+			width: 200px;
+			margin: auto;
+			}
+			button {
+			float: left;
+			}
+		</style>
+	</head>
+	<body id="container">
+			<div id="buttons">
+				<button onclick="f1();">BG to Green</button>
+				<button onclick="f2();">BG to White</button>
+				<button onclick="f3();">Text to Red</button>
+				<button onclick="f4();">Darken Text</button>
+			</div>			
+			<div id="quote" onmouseover="this.innerHTML='-Mike Nitchie'" onmouseout="this.innerHTML='Every time you forward an email from Geoff Larcom,<br />God kills a kitten.'">
+				Every time you forward an email from Geoff Larcom,<br />God kills a kitten.
+			</div>
+	</body>
+</html>

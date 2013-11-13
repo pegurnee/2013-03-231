@@ -1,0 +1,95 @@
+<html>
+<head>
+	<title>Inlab1010</title>
+
+	<script>
+// 		var elements = new Array();
+// 		
+// 			elements.H = 'Hydrogen';
+// 			elements.He = 'Helium';
+// 			elements.Li = 'Lithium';
+// 			elements.Be = 'Beryllium';
+// 			elements.B = 'Boron';
+// 			elements.Ed = 'Eddie';
+			
+// 		var elements = ['Hydrogen', 'Helium', 'Lithium', 'Beryllium', 'Boron', 'Eddie'];
+// 		
+// 			elements.H = elements[0];
+// 			elements.He = elements[1];
+// 			elements.Li = 'Lithium';
+// 			elements.Be = 'Beryllium';
+// 			elements.B = 'Boron';
+// 			elements.Ed = 'Eddie';	
+			
+			
+		function f1() {
+			var elements = ['Hydrogen', 'Helium', 'Lithium', 'Beryllium', 'Boron', 'Eddie'];		
+				elements.H = elements[0];
+				elements.He = elements[1];
+				elements.Li = 'Lithium';
+				elements.Be = 'Beryllium';
+				elements.B = 'Boron';
+				elements.Ed = 'Eddie';
+				
+			var key = prompt('What chemical symbol would you like to enter?');
+			key = key.replace(key.substring(0, 1), key.substring(0, 1).toUpperCase());
+			
+			var theNum = parseInt(prompt('What chemical number would you like to enter?'));
+			
+			alert('You have selected: ' + elements[key]);
+			alert('You have selected: ' + elements[theNum]);
+			}
+			
+		function f2() {
+			var str = prompt('Enter the string: ');
+			
+			var allTheEle = [];
+			var allTheChemName = [];
+			var theArray = str.split('</tr>');
+			for (var i = 0; i < theArray.length; i++) {				
+				allTheEle.push(
+					theArray[i].substring(
+						(theArray[i].indexOf('">') + 2), theArray[i].indexOf('</a')
+					)
+				);
+				allTheChemName.push(
+					theArray[i].substring(
+						(theArray[i].indexOf('text/') + 5), theArray[i].indexOf('/key')
+					)
+				);				
+			}
+			var elements = [];
+			for (var i = 0; i < theArray.length; i++) {
+				elements[i] = allTheEle[i];
+				elements[allTheChemName[i]] = elements[i];				
+			}
+			
+			var key = prompt('What chemical symbol would you like to enter?');
+			key = key.replace(key.substring(0, 1), key.substring(0, 1).toUpperCase());
+			
+			var theNum = parseInt(prompt('What chemical number would you like to enter?'));
+			
+			alert('You have selected: ' + elements[key]);
+			alert('You have selected: ' + elements[theNum]);
+			
+		}
+		</script>
+		
+		
+		<style>
+		#container {
+		text-align: center;
+		}
+		</style>
+	
+</head>
+
+<body>
+<div id="container">
+	<button onclick="f1()">Click here</button>
+	<button onclick="f2()">Click here more!</button>
+</div>
+
+<hr />
+</body>
+</html>

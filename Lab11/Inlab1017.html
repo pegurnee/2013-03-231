@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Inlab1017</title>
+
+		<script>		
+			var x;			
+			var pattern = new RegExp();
+			
+			function loadAll() {
+				x = document.getElementById("input");
+			}
+			function patternTest() {
+				alert(pattern.test(x.value));
+			}
+			function isAlienGender() {
+				pattern = /^(ablaq|bthial|coauetl)$/i;
+				alert(pattern.test(x.value));
+// 				x.maxlength = 7;
+// 				x.placeholder = "Enter Gender";
+
+			}
+			function isChars() {
+				pattern = /[rwx]{3}$/;
+				alert(pattern.test(x.value));
+// 				x.maxlength = 3;
+// 				x.placeholder = "Enter 3 [RWX]";
+			}
+			function blameCanada() {
+				pattern = /^[A-Z]\d[A-Z] \d[A-Z]\d$/;
+				alert(pattern.test(x.value));
+// 				x.maxlength = 7;
+// 				x.placeholder = "Enter Gender";
+			}
+			
+			function chooseButton(choice) {				
+				switch (choice) {
+					case 0:
+						isAlienGender();
+						break;
+					case 1:
+						isChars();
+						break;
+					case 2:
+						blameCanada();
+						break;
+				}
+			}
+		</script>
+
+	</head>
+	<body onload="loadAll()">
+		<form id="theForm">
+			<!-- 
+			<input type="radio" name="select" value="0" onclick="chooseButton(this.value)">Part 1<br />
+			<input type="radio" name="select" value="1" onclick="chooseButton(this.value)">Part 2<br />
+			<input type="radio" name="select" value="2" onclick="chooseButton(this.value)">Part 3<br />
+ 			-->
+
+			Please Input:<input type="text" id="input"><br />
+			<input type="button" value="Alien Gender" onclick="isAlienGender();"><br />
+			<input type="button" value="[RWX]" onclick="isChars();"><br />
+			<input type="button" value="Canada Zip Code" onclick="blameCanada();"><br />
+		</form>
+	</body>
+</html>

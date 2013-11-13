@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Inlab1031</title>
+		<script src="Inlab1031.js"></script>
+		<style>
+		#container {
+		position:relative;
+		margin:auto;
+		width:500px;
+		text-align:center;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<button onclick="newGame()">Start a new Game</button>
+			<button onclick="createCard()">Create a new Card</button><br />
+			<div id="btns">				
+				<button onclick="loadNext()">Load Next Card</button><br />
+				<button onclick="guessLoaded();">Guess Word</button><br />
+			</div>
+			<div id="card"></div>
+		</div>
+		<script>
+			initCards();
+		</script>
+	</body>
+</html>

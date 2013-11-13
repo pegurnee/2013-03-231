@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<!--
+  Name: Kevin Sikes
+  EID: E00978012
+  Project: Treasure Hunt programming project
+  Date: 19 Oct 2009
+  Class: COSC 231 SP09
+  http://people.emich.edu/ksikes1/Projects/TreasureHunt.html
+-->
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <title>Treasure Hunt!</title>
+  <link type="text/css" rel="stylesheet" href="Inlab1105a.css">
+  <script type="text/javascript" src="Inlab1105a.js"></script>
+</head>
+
+<!-- Initialize ball position, direction, speed; start timer-->
+<body onload="initSprite()">
+ <div id="GameBoard">
+ </div>
+ <div id="Buttons">
+  <!-- Add some buttons to control the direction-->
+	<table>
+		<tr>
+			<td><button onclick="direction(-1, -1)"><img src="http://icons.iconarchive.com/icons/icojam/blueberry-basic/32/arrow-left-up-icon.png" width="25" height="25" alt="up left"></button></td>
+			<td><button onclick="direction( 0, -1)"><img src="http://icons.iconarchive.com/icons/icojam/blueberry-basic/32/arrow-up-icon.png" width="25" height="25" alt="up"></button></td>
+			<td><button onclick="direction( 1, -1)"><img src="http://icons.iconarchive.com/icons/icojam/blueberry-basic/32/arrow-right-up-icon.png" width="25" height="25" alt="up right"></button></td>
+ 		</tr>
+		<tr>
+			<td><button onclick="direction(-1,  0)"><img src="http://icons.iconarchive.com/icons/icojam/blueberry-basic/32/arrow-left-icon.png" width="25" height="25" alt="left"></button></td>
+			<td><button onclick="direction( 0,  0)"><img src="http://icons.iconarchive.com/icons/pixelmixer/basic-2/64/pause-icon.png" width="25" height="25" alt="stop"></button></td>
+			<td><button onclick="direction( 1,  0)"><img src="http://icons.iconarchive.com/icons/icojam/blueberry-basic/32/arrow-right-icon.png" width="25" height="25" alt="right"></button></td>
+ 		</tr>
+		<tr>
+			<td><button onclick="direction(-1,  1)"><img src="http://icons.iconarchive.com/icons/icojam/blueberry-basic/32/arrow-left-down-icon.png" width="25" height="25" alt="down left"></button></td>
+			<td><button onclick="direction( 0,  1)"><img src="http://icons.iconarchive.com/icons/icojam/blueberry-basic/32/arrow-down-icon.png" width="25" height="25" alt="down"></button></td>
+			<td><button onclick="direction( 1,  1)"><img src="http://icons.iconarchive.com/icons/icojam/blueberry-basic/32/arrow-right-down-icon.png" width="25" height="25" alt="down right"></button></td>
+ 		</tr>
+	</table>
+ </div>
+
+  <div id="SpriteBox">
+	 <img id="Sprite" src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Pac-Man.svg/200px-Pac-Man.svg.png" width="25" height="25"
+			alt="Sprite">
+  </div>
+
+  <div id="PodValue">
+    Pod value: <span id="PodValueText">20</span>
+  </div>
+
+  <div id="Score">
+    Score: 100
+  </div>
+
+  <div id="Instructions">
+	 Use the buttons or the arrow keys on your keyboard to control the sprite.
+  </div>
+
+</body>
+</html>
+
+<!-- Sprite images and arrows created by Kevin Sikes using SnagIt Editor
+		 http://www.techsmith.com/ -->

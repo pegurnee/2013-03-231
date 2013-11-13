@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Inlab2024</title>
+		
+<!-- 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+			<script src="cookieLib.js"> -->
+		<script>
+			function GetCookie (name) {
+				var arg = name + "=";
+				var alen = arg.length;
+				var clen = document.cookie.length;
+				var i = 0;
+				while (i < clen) {
+					var j = i + alen;
+					if (document.cookie.substring(i, j) == arg)
+						return getCookieVal (j);
+					i = document.cookie.indexOf(" ", i) + 1;
+					if (i == 0) break; 
+				}
+				return null;
+			}
+			function SetCookie (name,value,expires,path,domain,secure) {
+				document.cookie = name + "=" + escape (value) +
+					((expires) ? "; expires=" + expires.toGMTString() : "") +
+					((path) ? "; path=" + path : "") +
+					((domain) ? "; domain=" + domain : "") +
+					((secure) ? "; secure" : "");
+			}
+			function getCookieVal (offset) {
+				var endstr = document.cookie.indexOf (";", offset);
+				if (endstr == -1)
+					endstr = document.cookie.length;
+				return unescape(document.cookie.substring(offset, endstr));
+			}					
+		</script>
+		
+		<script>
+			var cookieNum = 0;
+
+			function addCookie(cookieName, cookieValue) {
+				SetCookie(cookieName, cookieValue);
+				
+				var cookieSelect = '<option value="';
+				cookieSelect += cookieName;
+				cookieSelect += '">';
+				cookieSelect += cookieName;
+				cookieSelect += '</option>';
+				
+// 				$(#cookies).innerHTML += cookieSelect;
+				document.getElementById('cookies').innerHTML += cookieSelect;
+				
+				cookieNum++;
+			}
+			function createCookie() {
+				var numValue = prompt("What number do you want to add?");
+				var newCookieName = 'Num ' + cookieNum;
+				
+				addCookie(newCookieName, numValue);
+				
+			}    
+		</script>
+	</head>
+	<body>
+		<div style="text-align:center">
+			<button onclick="createCookie();">Create Cookie</button><br />
+			<span style="font-family:'monospace'">Select which cookie data do you want to read:</span>
+			<select id="cookies"></select><br />
+			<button onclick="alert(GetCookie(document.getElementById('cookies').selectedIndex))">Grab Cookie Data</button>
+		</div>
+		<script>
+			addCookie('Num 0', "0100 0101 0100 0100");
+		</script>
+	</body>
+<html>

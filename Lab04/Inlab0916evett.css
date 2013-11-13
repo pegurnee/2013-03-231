@@ -1,0 +1,20 @@
+body {
+	background-color: #fafffd;
+}
+h1 {
+	font: bold 35pt sans-serif;
+	color: #FF0000;
+}
+pre {
+	font: italic lighter 12pt "lucinda console",monospace;
+	text-align: center;
+}
+a:link {	
+	color: #8C4374;
+}
+a:visited {
+	color: #BC8F8F;
+}
+a:hover {
+	background-color: #DAA520;
+}

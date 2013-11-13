@@ -1,0 +1,55 @@
+/*
+  Name: Kevin Sikes
+  EID: E00978012
+  Project: Treasure Hunt programming project
+  Date: 19 Oct 2009
+  Class: COSC 231 SP09
+  http://people.emich.edu/ksikes1/Projects/TreasureHunt.css
+  */
+
+  	table {
+      text-align: center;
+      }
+
+  	#SpriteBox {
+      position: absolute;
+      left: 400px;
+      top: 400px;
+      }
+
+	#GameBoard {
+      background-color: gray;
+      width: 800px;
+      height: 800px
+      }
+
+   #Instructions {
+      position: absolute;
+      width: 150px;
+      left: 810px;
+      top: 700px;
+   }
+
+	#Buttons {
+      position: absolute;
+      left: 810px;
+      top: 380px;
+      }
+
+	#Score {
+      position: absolute;
+      left: 810px;
+      top: 550px;
+      font-family: sans-serif;
+      font-size: large;
+      }
+
+   #PodValue {
+      position: absolute;
+      left: 810px;
+      top: 520px;
+   }
+
+   .Pod {
+      position: absolute;
+   }

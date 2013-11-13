@@ -1,0 +1,21 @@
+body {
+	background-color: #E1FFE1;
+	
+}
+h1 {
+	font: bold 16pt verdana,sans-serif;
+}
+h2 {
+	font: lighter 13pt ariel;
+	color: #4B0000;
+}
+a:link {
+}
+a:visited {
+}
+a:hover {
+	background-color: #FF00FF;
+}
+ul {
+	list-style-type: circle;
+}
